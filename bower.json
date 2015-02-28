@@ -1,0 +1,24 @@
+{
+  "name": "in.js",
+  "version": "0.0.0",
+  "authors": [
+    "valentino miazzo"
+  ],
+  "description": "...",
+  "main": "js/src/In.js",
+  "license": "MIT",
+  "private": false,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "requirejs": "~2.1.14"
+  },
+  "devDependencies": {
+    "jasmine": "~2.0.1"
+  }
+}
