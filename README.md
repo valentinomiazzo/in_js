@@ -7,14 +7,14 @@ It takes care of some details often overlooked:
 
 * it provides a zuper member to access the parent class
 * the constructor of an instance of T points to function T, as expected
-* the In.inherit(...) method can be called at any point of the class definition.
+* the `In.inherit(...)` method can be called at any point of the class definition.
   Just after the Ctor definition, after the last member definition or at any point
   in between.
 
 ### How do I get set up? ###
 
 * How to use the lib (basic)
-    * copy js/src/In.js in your project
+    * copy `js/src/In.js` in your project
     * add it to your HTML in a script tag the module will be attached to window.IN
 * How to use the lib (advanced)
     * The lib is a [Require.js](http://require.js) compatible module so you can include in this way.
