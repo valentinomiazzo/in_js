@@ -4,9 +4,9 @@ IN comes from INheritance and this is what the lib provides.
 More accurately, it provides prototypal inheritance.
 
 It takes care of some details often overlooked:
-- it provides a zuper member to access the parent class
-- the constructor of an instance of T points to function T, as expected
-- the In.inherit(...) method can be called at any point of the class definition.
+* it provides a zuper member to access the parent class
+* the constructor of an instance of T points to function T, as expected
+* the In.inherit(...) method can be called at any point of the class definition.
   Just after the Ctor definition, after the last member definition or at any point
   in between.
 
