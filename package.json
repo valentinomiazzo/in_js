@@ -1,14 +1,16 @@
 {
-  "name": "spacebar",
+  "name": "in.js",
   "version": "0.0.0",
-  "description": "",
+  "description": "Prototypal inheritance done right",
+  "author": "valentino miazzo",
   "private": true,
-  "main": "main.js",
+  "license": "MIT",
+  "main": "js/src/In.js",
   "scripts": {
-    "start": "node main"
+    "postinstall": "bower install"
   },
   "devDependencies": {
-    "karma": "~0.12.3",
+    "karma": "~0.12.31",
     "karma-requirejs": "^0.2.2",
     "karma-jasmine": "~0.2.0",
     "karma-coverage": "~0.2.1",
@@ -18,7 +20,10 @@
     "karma-ie-launcher": "~0.1.5",
     "karma-phantomjs-launcher": "~0.1.4",
     "grunt": "~0.4.5",
-    "grunt-contrib-yuidoc": "~0.5.2"
+    "grunt-contrib-yuidoc": "~0.5.2",
+    "grunt-karma": "~0.10.1",
+    "bower": "~1.4.1",
+    "grunt-update-json": "~0.2.1"
   },
   "dependencies": {}
 }

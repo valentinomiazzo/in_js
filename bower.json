@@ -4,10 +4,10 @@
   "authors": [
     "valentino miazzo"
   ],
-  "description": "...",
+  "description": "Prototypal inheritance done right",
   "main": "js/src/In.js",
   "license": "MIT",
-  "private": false,
+  "private": true,
   "ignore": [
     "**/.*",
     "node_modules",
@@ -20,5 +20,6 @@
   },
   "devDependencies": {
     "jasmine": "~2.0.1"
-  }
+  },
+  "author": "valentino miazzo"
 }
