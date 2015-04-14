@@ -30,11 +30,11 @@ It takes care of some details often overlooked:
         * `grunt`
         * tests reports are in `build/tests`
         * coverage reports are in `build/coverage`
-        * docs are generated in build/docs
+        * docs are generated in `build/docs`
 
 ### Contribution guidelines ###
 
 * Writing tests
     * Jasmine it is used for testing.
-    * tests are in js/spec
+    * tests are in `js/spec`
 * For pull requests and tickets use lib's website
