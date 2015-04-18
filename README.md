@@ -15,7 +15,7 @@ It takes care of some details often overlooked:
 
 * How to use the lib (basic)
     * copy `js/src/In.js` in your project
-    * add it to your HTML in a script tag the module will be attached to window.IN
+    * add it to your HTML in a script tag the module will be attached to window.In
 * How to use the lib (advanced)
     * The lib is a [Require.js](http://require.js) compatible module so you can include in this way.
 * Summary of set up
