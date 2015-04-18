@@ -19,7 +19,8 @@
 
     require.config({
         // Karma serves files under /base, which is the basePath from your config file
-        baseUrl: 'base/js/src',
+        // NOTE the / . http://stackoverflow.com/a/23798554/46405
+        baseUrl: '/base/js/src',
 
         paths: {
             spec: '../spec'
@@ -27,9 +28,6 @@
 
         // dynamically load all test files
         deps: allTestFiles,
-        /*deps: [
-            "spec/common/In"
-        ],*/
 
         // we have to kickoff jasmine, as it is asynchronous
         callback: window.__karma__.start
