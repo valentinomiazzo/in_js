@@ -19,10 +19,11 @@ It takes care of some details often overlooked:
 * How to use the lib (advanced)
     * The lib is a [Require.js](http://require.js) compatible module so you can include in this way.
 * Summary of set up
-    * clone this repository
     * install [Node.js](http://nodejs.org/) (tested with 0.10.31)
-    * install [Grunt](http://gruntjs.com/)
-        * `npm install -g grunt`
+    * install [Npm](https://www.npmjs.com/) (tested with 2.8.3)
+    * install [Bower](http://bower.io/) (tested with 1.4.1)
+        * `npm install -g bower`
+    * clone this repository
     * in the root of the cloned repo, type (on Windows you may need to disable antivirus if you get strange issues during the install):
         * `npm install`
 * How to run tests and generate docs
