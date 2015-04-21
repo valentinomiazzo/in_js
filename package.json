@@ -2,12 +2,28 @@
   "name": "in.js",
   "version": "0.0.0",
   "description": "Prototypal inheritance done right",
-  "author": "valentino miazzo",
-  "private": true,
   "license": "MIT",
+  "author": "valentino miazzo",
+  "contributors": [],
+  "private": true,
+  "preferGlobal": false,
   "main": "js/src/In.js",
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org/65c02/in_js"
+  },
+  "bugs": {
+    "url": "https://bitbucket.org/65c02/in_js/issues"
+  },
+  "publishConfig": {
+  },
+  "keywords": [
+    "inheritance"
+  ],
+  "dependencies": {
+  },
   "scripts": {
-    "postinstall": "bower install"
+    "postinstall": "grunt"
   },
   "devDependencies": {
     "karma": "~0.12.31",
@@ -26,5 +42,4 @@
     "grunt-update-json": "~0.2.1",
     "karma-coverage": "~0.2.7"
   },
-  "dependencies": {}
 }
