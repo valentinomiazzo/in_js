@@ -21,8 +21,6 @@ It takes care of some details often overlooked:
 * Summary of set up
     * install [Node.js](http://nodejs.org/) (tested with 0.10.31)
     * install [Npm](https://www.npmjs.com/) (tested with 2.8.3)
-    * install [Bower](http://bower.io/) (tested with 1.4.1)
-        * `npm install -g bower`
     * clone this repository
     * in the root of the cloned repo, type (on Windows you may need to disable antivirus if you get strange issues during the install):
         * `npm install`
