@@ -41,5 +41,5 @@
     "grunt-karma": "~0.10.1",
     "grunt-update-json": "~0.2.1",
     "karma-coverage": "~0.2.7"
-  },
+  }
 }
