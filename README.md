@@ -5,11 +5,34 @@ More accurately, it provides prototypal inheritance.
 
 It takes care of some details often overlooked:
 
-* it provides a zuper member to access the parent class
 * the constructor of an instance of T points to function T, as expected
+```javascript
+function Base() {}
+Base.prototype.x = 0;
+
+//Bad free style
+function Sub() {}
+Sub.prototype = new Base();
+var s = new Sub();
+s.x==0; //true
+s.constructor==Sub; //false
+
+//With In.js
+function Sub() {}
+In.inherit(Sub, Base);
+s.x==0; //true
+s.constructor==Sub; //true
+```
+* it provides a zuper member to access the parent class
+```javascript
+//TODO ...
+```
 * the `In.inherit(...)` method can be called at any point of the class definition.
   Just after the Ctor definition, after the last member definition or at any point
   in between.
+```javascript
+//TODO ...
+```
 
 ### How do I get set up? ###
 
