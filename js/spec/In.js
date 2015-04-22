@@ -49,15 +49,23 @@ define([
             function Car(y) {
                 Thing.call(this, y);
             }
-            In.inherit(Car, Thing);
-            //We can change the prototype after inheriting
             Car.prototype.b = function (x) {
                 return this.a(x) * 2;
             };
+            Car.prototype.A = 0;
+            In.inherit(Car, Thing);
+            //We can change the prototype after inheriting
+            Car.prototype.c = function (x) {
+                return this.a(x) * 3;
+            };
+            Car.prototype.B = 1;
 
             var i = new Car(2);
             expect(i.a(3)).toBe(6);
             expect(i.b(3)).toBe(12);
+            expect(i.c(3)).toBe(18);
+            expect(i.A).toBe(0);
+            expect(i.B).toBe(1);
             expect(i instanceof Thing).toBe(true);
             expect(i instanceof Car).toBe(true);
         });
