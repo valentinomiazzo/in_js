@@ -73,6 +73,6 @@ s.Z==2; //true
     * [Jasmine](https://jasmine.github.io/) it is used for testing.
     * tests are in `js/spec`
 * For pull requests
-    * go [here](pull-requests)
+    * go [here](../../pulls)
 * For issues
-    * go [here](issues)
+    * go [here](../../issues)
