@@ -1,6 +1,6 @@
 # In.js : prototypal inheritance done right #
 
-IN comes from INheritance and this is what the lib provides.
+**In** comes from **In**heritance and this is what the lib provides.
 More accurately, it provides prototypal inheritance.
 
 It takes care of some details often overlooked:
