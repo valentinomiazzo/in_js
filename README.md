@@ -70,7 +70,7 @@ s.Z==2; //true
 ### Contribution guidelines ###
 
 * Writing tests
-    * Jasmine it is used for testing.
+    * [Jasmine](https://jasmine.github.io/) it is used for testing.
     * tests are in `js/spec`
 * For pull requests
     * go [here](pull-requests)
