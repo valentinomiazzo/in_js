@@ -62,4 +62,4 @@ s.constructor==Sub; //true
 * For pull requests
     * go [here](pull-requests)
 * For issues
-    * go [here]()
+    * go [here](issues)
