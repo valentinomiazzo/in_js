@@ -59,4 +59,7 @@ s.constructor==Sub; //true
 * Writing tests
     * Jasmine it is used for testing.
     * tests are in `js/spec`
-* For pull requests and tickets use lib's website
+* For pull requests
+    * go [here](pull-requests)
+* For issues
+    * go [here]()
