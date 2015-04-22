@@ -1,6 +1,6 @@
 # In.js : prototypal inheritance done right #
 
-IN comes from INheritance and this is what the lib provides.
+**In** comes from **In**heritance and this is what the lib provides.
 More accurately, it provides prototypal inheritance.
 
 It takes care of some details often overlooked:
@@ -70,7 +70,7 @@ s.Z==2; //true
 ### Contribution guidelines ###
 
 * Writing tests
-    * Jasmine it is used for testing.
+    * [Jasmine](https://jasmine.github.io/) it is used for testing.
     * tests are in `js/spec`
 * For pull requests
     * go [here](pull-requests)
