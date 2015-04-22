@@ -10,10 +10,10 @@
   "main": "js/src/In.js",
   "repository": {
     "type": "git",
-    "url": "https://bitbucket.org/65c02/in_js"
+    "url": "https://github.com/valentinomiazzo/in_js"
   },
   "bugs": {
-    "url": "https://bitbucket.org/65c02/in_js/issues"
+    "url": "https://github.com/valentinomiazzo/in_js/issues"
   },
   "publishConfig": {
   },
