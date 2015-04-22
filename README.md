@@ -25,13 +25,25 @@ s.constructor==Sub; //true
 ```
 * it provides a zuper member to access the parent class
 ```javascript
-//TODO ...
+function Base(x) { this.x = x; }
+function Sub(x) { this.zuper(x); }
+In.inherit(Sub, Base);
+var s = new Sub(2);
+s.x==2; //true
 ```
 * the `In.inherit(...)` method can be called at any point of the class definition.
   Just after the Ctor definition, after the last member definition or at any point
   in between.
 ```javascript
-//TODO ...
+function Base() {}
+function Sub() {}
+Sub.prototype.Y = 1; //not overwritten
+In.inherit(Sub, Base);
+Sub.prototype.Z = 2; //not ignored
+
+var s = new Sub();
+s.Y==1; //true
+s.Z==2; //true
 ```
 
 ### How do I get set up? ###
