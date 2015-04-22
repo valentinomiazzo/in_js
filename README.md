@@ -45,6 +45,7 @@ var s = new Sub();
 s.Y==1; //true
 s.Z==2; //true
 ```
+* ... and it performs checks like avoiding the repeated inheritance of the same class
 
 ### How do I get set up? ###
 
