@@ -1,25 +1,20 @@
 {
   "name": "in.js",
   "version": "0.0.0",
-  "authors": [
-    "valentino miazzo"
-  ],
   "description": "Prototypal inheritance done right",
-  "main": "js/src/In.js",
   "license": "MIT",
+  "author": "valentino miazzo",
+  "main": "js/src/In.js",
   "private": true,
   "ignore": [
     "**/.*",
     "node_modules",
-    "bower_components",
-    "test",
-    "tests"
+    "bower_components"
   ],
   "dependencies": {
     "requirejs": "~2.1.14"
   },
   "devDependencies": {
     "jasmine": "~2.0.1"
-  },
-  "author": "valentino miazzo"
+  }
 }
