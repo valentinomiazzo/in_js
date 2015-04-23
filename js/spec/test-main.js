@@ -1,5 +1,14 @@
 /*jslint browser: true, bitwise: true, nomen: true, todo: true, vars: true, indent: 4 */
 /*global require */
+
+/*!
+ *  In.js v0.0.0
+ *
+ *  (c) 2015, Valentino Miazzo
+ *
+ *  MIT License
+ */
+
 (function() {
     'use strict';
 

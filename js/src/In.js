@@ -1,6 +1,14 @@
 /*jslint browser: true, bitwise: true, nomen: true, todo: true, vars: true, plusplus: true, indent: 4 */
 /*global define */
 
+/*!
+ *  In.js v0.0.0
+ *
+ *  (c) 2015, Valentino Miazzo
+ *
+ *  MIT License
+ */
+
 define = define || function (deps, fn) {
     "use strict";
     window.In = window.In || {};
