@@ -8,13 +8,13 @@ It takes care of some details often overlooked:
 * the constructor of an instance of T points to function T, as expected
 ```javascript
 function Base() {}
-Base.prototype.x = 0;
+Base.prototype.X = 0;
 
 //Bad free style
 function Sub() {}
 Sub.prototype = new Base();
 var s = new Sub();
-s.x==0; //true
+s.X==0; //true
 s.constructor==Sub; //false
 
 //With In.js
