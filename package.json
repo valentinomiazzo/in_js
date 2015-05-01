@@ -19,10 +19,8 @@
   "keywords": [
     "inheritance"
   ],
+  "scripts": {},
   "dependencies": {},
-  "scripts": {
-    "postinstall": "grunt"
-  },
   "devDependencies": {
     "grunt": "~0.4.5",
     "grunt-contrib-yuidoc": "~0.5.2",
