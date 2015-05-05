@@ -1,8 +1,1 @@
-{
-  "name": "in.js",
-  "version": "0.0.0",
-  "main": "js/src/In.js",
-  "ignore": [],
-  "dependencies": {},
-  "devDependencies": {}
-}
+{"name":"in.js","main":"js/src/In.js","ignore":[],"dependencies":{},"devDependencies":{},"description":"Prototypal inheritance done right","keywords":["inheritance"],"license":"MIT","version":"0.0.0"}

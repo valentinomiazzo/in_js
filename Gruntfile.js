@@ -18,6 +18,27 @@ module.exports = function(grunt) {
                 }
             }
         },
+        update_json: {
+            // set some task-level options
+            options: {
+                src: 'package.json',
+                indent: "  "
+            },
+            // update bower.json with data from package.json
+            bower: {
+                dest: 'bower.json',     // where to write to
+                // the fields to update, as a String Grouping
+                fields: {
+                    'name'          : null,
+                    'version'       : null,
+                    'description'   : null,
+                    'author'        : null,
+                    'main'          : null,
+                    'private'       : null,
+                    'license'       : null
+                }
+            }
+        },
         karma: {
             unit: {
                 configFile: "karma.conf.js",
@@ -28,6 +49,6 @@ module.exports = function(grunt) {
     });
 
     // Default task(s).
-    grunt.registerTask('default', ['yuidoc', 'karma']);
+    grunt.registerTask('default', ['update_json', 'yuidoc', 'karma']);
 
 };
