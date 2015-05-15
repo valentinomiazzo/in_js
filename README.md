@@ -57,6 +57,7 @@ s.Z==2; //true
 * Summary of set up
     * install [Node.js](http://nodejs.org/) (tested with 0.10.31)
     * install [Npm](https://www.npmjs.com/) (tested with 2.8.3)
+    * `npm install grunt-cli -g`
     * clone this repository
     * in the root of the cloned repo, type (on Windows you may need to disable antivirus if you get strange issues during the install):
         * `npm install`
