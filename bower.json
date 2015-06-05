@@ -1,7 +1,7 @@
 {
     "name": "in.js",
     "main": "js/src/In.js",
-    "ignore": [],
+    "ignore" : [ "/*.js", "/js/spec/" ],
     "dependencies": {},
     "devDependencies": {},
     "description": "Prototypal inheritance done right",
