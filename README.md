@@ -8,28 +8,28 @@ It takes care of some details often overlooked:
 * the constructor of an instance of T points to function T, as expected
 ```javascript
 function Base() {}
-Base.prototype.X = 0;
+Base.prototype.K = 0;
 
 //Bad free style
 function Sub() {}
 Sub.prototype = new Base();
 var s = new Sub();
-s.X==0; //true
-s.constructor==Sub; //false
+s.K === 0; //true
+s.constructor === Sub; //false
 
 //With In.js
-function Sub() {}
-In.inherit(Sub, Base);
-s.x==0; //true
-s.constructor==Sub; //true
+function Sub2() {}
+In.inherit(Sub2, Base);
+s.K === 0; //true
+s.constructor === Sub2; //true
 ```
-* it provides a zuper member to access the parent class
+* it provides a zuper member to access the parent class and constructor
 ```javascript
 function Base(x) { this.x = x; }
 function Sub(x) { this.zuper(x); }
 In.inherit(Sub, Base);
 var s = new Sub(2);
-s.x==2; //true
+s.x === 2; //true
 ```
 * the `In.inherit(...)` method can be called at any point of the class definition.
   Just after the Ctor definition, after the last member definition or at any point
@@ -37,13 +37,13 @@ s.x==2; //true
 ```javascript
 function Base() {}
 function Sub() {}
-Sub.prototype.Y = 1; //not overwritten
+Sub.prototype.Y = 1; //not overwritten by the following call
 In.inherit(Sub, Base);
-Sub.prototype.Z = 2; //not ignored
+Sub.prototype.Z = 2; //not ignored when done after inheriting
 
 var s = new Sub();
-s.Y==1; //true
-s.Z==2; //true
+s.Y === 1; //true
+s.Z === 2; //true
 ```
 * ... and it performs checks like avoiding the repeated inheritance of the same class
 
