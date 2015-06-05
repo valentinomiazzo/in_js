@@ -1,1 +1,20 @@
-{"name":"in.js","main":"js/src/In.js","ignore":[],"dependencies":{},"devDependencies":{},"description":"Prototypal inheritance done right","keywords":["inheritance"],"license":"MIT","version":"0.0.0"}
+{
+    "name": "in.js",
+    "main": "js/src/In.js",
+    "ignore": [],
+    "dependencies": {},
+    "devDependencies": {},
+    "description": "Prototypal inheritance done right",
+    "keywords": [
+        "inheritance"
+    ],
+    "license": [
+        {
+            "type": "MIT",
+            "url": "https://github.com/valentinomiazzo/in_js"
+        }
+    ],
+    "version": "0.0.0",
+    "authors": "valentino miazzo",
+    "private": true
+}

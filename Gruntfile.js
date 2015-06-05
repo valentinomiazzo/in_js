@@ -1,4 +1,7 @@
+/*global module, require */
+
 module.exports = function(grunt) {
+    "use strict";
 
     require('load-grunt-tasks')(grunt);
 
@@ -18,24 +21,22 @@ module.exports = function(grunt) {
                 }
             }
         },
-        update_json: {
-            // set some task-level options
-            options: {
-                src: 'package.json',
-                indent: "  "
+        "sync-json": {
+            "options": {
+                "indent": 4,
+                "include": [
+                    "name",
+                    "description",
+                    "version",
+                    "author as authors", // is "author" in package.json, but "authors" in bower.json
+                    "main",
+                    "private",
+                    "licenses as license"
+                ]
             },
-            // update bower.json with data from package.json
-            bower: {
-                dest: 'bower.json',     // where to write to
-                // the fields to update, as a String Grouping
-                fields: {
-                    'name'          : null,
-                    'version'       : null,
-                    'description'   : null,
-                    'author'        : null,
-                    'main'          : null,
-                    'private'       : null,
-                    'license'       : null
+            "bower": {
+                files: {
+                    "bower.json": "package.json"
                 }
             }
         },
@@ -49,6 +50,6 @@ module.exports = function(grunt) {
     });
 
     // Default task(s).
-    grunt.registerTask('default', ['update_json', 'yuidoc', 'karma']);
+    grunt.registerTask('default', ['sync-json', 'yuidoc', 'karma']);
 
 };
