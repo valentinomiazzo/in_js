@@ -47,6 +47,13 @@ s.Z === 2; //true
 ```
 * ... and it performs checks like avoiding the repeated inheritance of the same class
 
+### Docs and examples ###
+
+Documentation is available [here](build/docs/index.html).
+
+The [spec file](js/spec/In.js) contains some examples of use.
+A [coverage report](build/coverage/PhantomJS 1.9.8 (Windows 7)/index.html) is available too.
+
 ### How do I get set up? ###
 
 * How to use the lib (basic)
