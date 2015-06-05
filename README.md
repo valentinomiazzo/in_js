@@ -49,10 +49,10 @@ s.Z === 2; //true
 
 ### Docs and examples ###
 
-Documentation is available [here](build/docs/index.html).
+Documentation is available [here](https://rawgit.com/valentinomiazzo/in_js/master/build/docs/classes/In.html).
 
 The [spec file](js/spec/In.js) contains some examples of use.
-A [coverage report](build/coverage/PhantomJS 1.9.8 (Windows 7)/index.html) is available too.
+A [coverage report](https://rawgit.com/valentinomiazzo/in_js/master/build/coverage/PhantomJS%201.9.8%20(Windows%207)/index.html) is available too.
 
 ### How do I get set up? ###
 
