@@ -1,0 +1,59 @@
+{
+    "project": {
+        "name": "in.js",
+        "description": "Prototypal inheritance done right",
+        "version": "0.0.0",
+        "url": ""
+    },
+    "files": {
+        "js\\src\\In.js": {
+            "name": "js\\src\\In.js",
+            "modules": {},
+            "classes": {
+                "In": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {},
+    "classes": {
+        "In": {
+            "name": "In",
+            "shortname": "In",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "js\\src\\In.js",
+            "line": 23,
+            "description": "This is the collection of static methods exposed by In.js",
+            "static": 1
+        }
+    },
+    "classitems": [
+        {
+            "file": "js\\src\\In.js",
+            "line": 57,
+            "description": "Declares that clazz inherits from zuper.",
+            "itemtype": "method",
+            "name": "inherit",
+            "static": 1,
+            "params": [
+                {
+                    "name": "clazz",
+                    "description": "the class inheriting",
+                    "type": "Class"
+                },
+                {
+                    "name": "zuper",
+                    "description": "the class inherited",
+                    "type": "Class"
+                }
+            ],
+            "class": "In"
+        }
+    ],
+    "warnings": []
+}
