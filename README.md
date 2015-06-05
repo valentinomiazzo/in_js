@@ -1,11 +1,10 @@
 # In.js : prototypal inheritance done right #
 
-**In** comes from **In**heritance and this is what the lib provides.
-More accurately, it provides prototypal inheritance.
+**In** comes from **In**heritance because this is what the lib provides. More accurately, it provides prototypal inheritance.
 
 It takes care of some details often overlooked:
 
-* the constructor of an instance of T points to function T, as expected
+* the constructor of an instance of T points to the function T, as expected
 ```javascript
 function Base() {}
 Base.prototype.K = 0;
@@ -23,7 +22,7 @@ In.inherit(Sub2, Base);
 s.K === 0; //true
 s.constructor === Sub2; //true
 ```
-* it provides a zuper member to access the parent class and constructor
+* it provides a zuper member with which to access the parent class and constructor
 ```javascript
 function Base(x) { this.x = x; }
 function Sub(x) { this.zuper(x); }
@@ -58,7 +57,7 @@ A [coverage report](https://rawgit.com/valentinomiazzo/in_js/master/build/covera
 
 * How to use the lib (basic)
     * copy `js/src/In.js` in your project
-    * add it to your HTML in a script tag the module will be attached to window.In
+    * add it to your HTML in a script tag. The module will be attached to `window.In`
 * How to use the lib (advanced)
     * The lib is a [Require.js](http://require.js) compatible module so you can include in this way.
 * Summary of set up
