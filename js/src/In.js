@@ -27,17 +27,12 @@ define([
     */
     var In = window.In || {};
 
-    var _config = module.config();
-
-    var _assert;
-    if (_config.assert === undefined || _config.assert) {
-        _assert = function (trueish, message) {
-            if (!trueish) {
-                //TODO: add more details about the failure, like stack trace
-                throw new Error(message || "_assert violated ...");
-            }
-        };
-    }
+    var _assert = function (trueish, message) {
+        if (!trueish) {
+            //TODO: add more details about the failure, like stack trace
+            throw new Error(message || "_assert violated ...");
+        }
+    };
 
     function _simpleCopy(dst, src) {
         var member;
@@ -53,6 +48,34 @@ define([
             }
         }
     }
+
+    /**
+    Configures the library.
+    It expects a JSON like the following:
+
+        {
+            "assert" : assertCallback
+        }
+
+    It is called at load time by require.js passing as `config` the config of the module.
+
+    Fields description:
+
+    `assertCallback`:
+    The signature is `void assert(boolean, String)`.
+    If you pass `null` (but not `undefined`) then assertions are disabled.
+
+    @method configure
+    @static
+    @param config {Object} the configuration object
+    */
+    In.configure = function(config) {
+        if (_assert) { _assert(config !== null, "config is null"); }
+        if (config.assert && _assert) { _assert(typeof config.assert === 'function', "assert is not a function"); }
+        if (config.assert !== undefined) {
+            _assert = config.assert;
+        }
+    };
 
     /**
     Declares that clazz inherits from zuper.
@@ -74,6 +97,8 @@ define([
         clazz.prototype.zuper = zuper;
         _simpleCopy(clazz.prototype, oldPrototype); //restore members already added before calling this
     };
+
+    In.configure(module.config());
 
     return In;
 });

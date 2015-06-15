@@ -33,9 +33,10 @@ define([
             Car.prototype.c = function () {
                 return "hello";
             };
-            In.inherit(Car, Thing);
 
+            In.inherit(Car, Thing);
             var i = new Car(2);
+
             expect(i.a(3)).toBe(6);
             expect(i.b(3)).toBe(12);
             expect(i.c()).toBe("hello");
@@ -47,13 +48,14 @@ define([
             function Car(y) {
                 this.zuper(y);
             }
-            In.inherit(Car, Thing);
 
+            In.inherit(Car, Thing);
             var i = new Car(2);
+
             expect(i.y).toBe(2);
         });
 
-        it("allows changes to the protoype after the inheritance declaration", function() {
+        it("allows changes to the prototype after the inheritance declaration", function() {
             function Car(y) {
                 Thing.call(this, y);
             }
@@ -69,6 +71,7 @@ define([
             Car.prototype.B = 1;
 
             var i = new Car(2);
+
             expect(i.a(3)).toBe(6);
             expect(i.b(3)).toBe(12);
             expect(i.c(3)).toBe(18);
@@ -80,35 +83,59 @@ define([
 
         it("points to the right constructor after the inheritance declaration", function() {
             function Car() { return; }
-            In.inherit(Car, Thing);
 
+            In.inherit(Car, Thing);
             var i = new Car();
+
             expect(i.constructor).toBe(Car);
         });
 
         it("detects multiple inherits of the same class", function() {
             function Base() { return; }
-
             function Special() { return; }
+
             In.inherit(Special, Base);
 
-            try {
-                expect(In.inherit(Special, Base)).toBe('throws an exception');
-            } finally { return; }
+            expect(In.inherit.bind(Special, Base)).toThrow();
         });
 
         it("detects multiple inherits of the same class, even if a level away", function() {
             function Base() { return; }
+            function Special() { return; }
+            function Exclusive() { return; }
 
+            In.inherit(Special, Base);
+            In.inherit(Exclusive, Special);
+
+            expect(In.inherit.bind(Exclusive, Base)).toThrow();
+        });
+
+        it("allows to override the default assert callback. In this way you can inject your preferred framework (e.g. Chai)", function() {
+            var assertCalled = false;
+            var assertCallback = function (trueish, message) {
+                if (!trueish) {
+                    assertCalled = !trueish;
+                    throw new Error(message);
+                }
+            };
+            In.configure({
+                "assert": assertCallback
+            });
+
+            expect(In.inherit.bind(null, null)).toThrow();
+
+            expect(assertCalled).toBe(true);
+        });
+
+        it("allows you to disable assertions, if you want.", function() {
+            In.configure({
+                "assert": null
+            });
+            function Base() { return; }
             function Special() { return; }
             In.inherit(Special, Base);
 
-            function Exclusive() { return; }
-            In.inherit(Exclusive, Special);
-
-            try {
-                expect(In.inherit(Exclusive, Base)).toBe('throws an exception');
-            } finally { return; }
+            In.inherit(Special, Base); //double inherit doesn't throw
         });
 
     });

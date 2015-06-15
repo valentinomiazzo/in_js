@@ -35,7 +35,23 @@
     "classitems": [
         {
             "file": "js\\src\\In.js",
-            "line": 57,
+            "line": 52,
+            "description": "Configures the library.\nIt expects a JSON like the following:\n\n    {\n        \"assert\" : assertCallback\n    }\n\nIt is called at load time by require.js passing as `config` the config of the module.\n\nFields description:\n\n`assertCallback`:\nThe signature is `void assert(boolean, String)`.\nIf you pass `null` (but not `undefined`) then assertions are disabled.",
+            "itemtype": "method",
+            "name": "configure",
+            "static": 1,
+            "params": [
+                {
+                    "name": "config",
+                    "description": "the configuration object",
+                    "type": "Object"
+                }
+            ],
+            "class": "In"
+        },
+        {
+            "file": "js\\src\\In.js",
+            "line": 80,
             "description": "Declares that clazz inherits from zuper.",
             "itemtype": "method",
             "name": "inherit",
