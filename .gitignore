@@ -2,3 +2,5 @@
 /TODO.txt
 /component.json
 /build/tests
+/build/coverage/Firefox*
+/build/coverage/Chrome*
