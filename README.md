@@ -59,26 +59,30 @@ A [coverage report](https://rawgit.com/valentinomiazzo/in_js/master/build/covera
     * copy `js/src/In.js` in your project
     * add it to your HTML in a script tag. The module will be attached to `window.In`
 * How to use the lib (advanced)
-    * The lib is a [Require.js](http://require.js) compatible module so you can include in this way.
-* Summary of set up
+    * The lib is a [Require.js](http://require.js) compatible module.
+    * The lib is a [Bower](http://bower.io) compatible component. You can add it to your dependencies in this way:
+    ```javascript
+    "dependencies": {
+        "in_js": "git+https://github.com/valentinomiazzo/in_js.git"
+    }
+    ```
+* How to modify the lib, run tests, etc...
     * install [Node.js](http://nodejs.org/) (tested with 0.10.31)
     * install [Npm](https://www.npmjs.com/) (tested with 2.8.3)
     * `npm install grunt-cli -g`
     * clone this repository
     * in the root of the cloned repo, type (on Windows you may need to disable antivirus if you get strange issues during the install):
         * `npm install`
-* How to run tests and generate docs
-    * in the root of the cloned repo, type:
         * `grunt`
-        * tests reports are in `build/tests`
-        * coverage reports are in `build/coverage`
         * docs are generated in `build/docs`
+        * Writing tests
+            * [Jasmine](https://jasmine.github.io/) it is used for testing.
+            * tests are in `js/spec`
+            * tests reports are in `build/tests`
+            * coverage reports are in `build/coverage`
 
 ### Contribution guidelines ###
 
-* Writing tests
-    * [Jasmine](https://jasmine.github.io/) it is used for testing.
-    * tests are in `js/spec`
 * For pull requests
     * go [here](../../pulls)
 * For issues
