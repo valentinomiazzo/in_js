@@ -18,7 +18,7 @@ s.constructor === Sub; //false
 
 //With In.js
 function Sub2() {}
-In.inherit(Sub2, Base);
+In.inheritFrom(Sub2, Base);
 s.K === 0; //true
 s.constructor === Sub2; //true
 ```
@@ -26,18 +26,18 @@ s.constructor === Sub2; //true
 ```javascript
 function Base(x) { this.x = x; }
 function Sub(x) { this.zuper(x); }
-In.inherit(Sub, Base);
+In.inheritFrom(Sub, Base);
 var s = new Sub(2);
 s.x === 2; //true
 ```
-* the `In.inherit(...)` method can be called at any point of the class definition.
+* the `In.inheritFrom(...)` method can be called at any point of the class definition.
   Just after the Ctor definition, after the last member definition or at any point
   in between.
 ```javascript
 function Base() {}
 function Sub() {}
 Sub.prototype.Y = 1; //not overwritten by the following call
-In.inherit(Sub, Base);
+In.inheritFrom(Sub, Base);
 Sub.prototype.Z = 2; //not ignored when done after inheriting
 
 var s = new Sub();
