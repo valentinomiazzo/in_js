@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.0.0</em>
+            <em>API Docs for: 0.1.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -90,9 +90,9 @@
 /*global define */
 
 /*!
- *  In.js v0.0.0
+ *  In.js v0.1.0
  *
- *  (c) 2015, Valentino Miazzo
+ *  (c) Valentino Miazzo
  *
  *  MIT License
  */
@@ -150,7 +150,7 @@ define([
     Fields description:
 
     &#x60;assertCallback&#x60;:
-    The signature is &#x60;void assert(boolean, String)&#x60;.
+    Optional. The signature is &#x60;void assert(boolean, String)&#x60;.
     If you pass &#x60;null&#x60; (but not &#x60;undefined&#x60;) then assertions are disabled.
 
     @method configure
@@ -167,12 +167,12 @@ define([
 
     /**
     Declares that clazz inherits from zuper.
-    @method inherit
+    @method inheritFrom
     @static
     @param clazz {Class} the class inheriting
     @param zuper {Class} the class inherited
     */
-    In.inherit = function (clazz, zuper) {
+    In.inheritFrom = function (clazz, zuper) {
         if (_assert) { _assert(clazz, &quot;clazz is null&quot;); }
         if (_assert) { _assert(typeof clazz === &#x27;function&#x27;, &quot;clazz is not a function&quot;); }
         if (_assert) { _assert(zuper, &quot;zuper is null&quot;); }
@@ -185,6 +185,16 @@ define([
         clazz.prototype.zuper = zuper;
         _simpleCopy(clazz.prototype, oldPrototype); //restore members already added before calling this
     };
+
+    /**
+    Declares that clazz inherits from zuper.
+    @method inherit
+    @static
+    @param clazz {Class} the class inheriting
+    @param zuper {Class} the class inherited
+    @deprecated please use inheritFrom
+    */
+    In.inherit = In.inheritFrom;
 
     In.configure(module.config());
 

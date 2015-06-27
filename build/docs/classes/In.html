@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.0.0</em>
+            <em>API Docs for: 0.1.0</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -139,8 +139,19 @@
                                 
                             </li>
                         
-                            <li class="index-item method">
+                            <li class="index-item method deprecated">
                                 <a href="#method_inherit">inherit</a>
+
+                                
+                                    <span class="flag static">static</span>
+                                
+                                
+                                    <span class="flag deprecated">deprecated</span>
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_inheritFrom">inheritFrom</a>
 
                                 
                                     <span class="flag static">static</span>
@@ -227,7 +238,7 @@ It expects a JSON like the following:</p>
 <p>It is called at load time by require.js passing as <code>config</code> the config of the module.</p>
 <p>Fields description:</p>
 <p><code>assertCallback</code>:
-The signature is <code>void assert(boolean, String)</code>.
+Optional. The signature is <code>void assert(boolean, String)</code>.
 If you pass <code>null</code> (but not <code>undefined</code>) then assertions are disabled.</p>
 
     </div>
@@ -264,8 +275,125 @@ If you pass <code>null</code> (but not <code>undefined</code>) then assertions a
 </div>
 
                 
-                    <div id="method_inherit" class="method item">
+                    <div id="method_inherit" class="method item deprecated">
     <h3 class="name"><code>inherit</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>clazz</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code>zuper</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+        <span class="flag deprecated" title="please use inheritFrom">deprecated</span>
+    
+
+    
+
+    
+
+    
+        <span class="flag static">static</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/js_src_In.js.html#l101"><code>js\src\In.js:101</code></a>
+        
+        </p>
+
+
+        
+            <p>Deprecated: please use inheritFrom</p>
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Declares that clazz inherits from zuper.</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">clazz</code>
+                        <span class="type">Class</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>the class inheriting</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name">zuper</code>
+                        <span class="type">Class</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>the class inherited</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_inheritFrom" class="method item">
+    <h3 class="name"><code>inheritFrom</code></h3>
 
     
         <div class="args">

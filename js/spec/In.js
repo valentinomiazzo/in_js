@@ -2,9 +2,9 @@
 /*global define, describe, it, expect */
 
 /*!
- *  In.js v0.0.0
+ *  In.js v0.1.0
  *
- *  (c) 2015, Valentino Miazzo
+ *  (c) Valentino Miazzo
  *
  *  MIT License
  */
@@ -34,7 +34,7 @@ define([
                 return "hello";
             };
 
-            In.inherit(Car, Thing);
+            In.inheritFrom(Car, Thing);
             var i = new Car(2);
 
             expect(i.a(3)).toBe(6);
@@ -49,7 +49,7 @@ define([
                 this.zuper(y);
             }
 
-            In.inherit(Car, Thing);
+            In.inheritFrom(Car, Thing);
             var i = new Car(2);
 
             expect(i.y).toBe(2);
@@ -63,7 +63,7 @@ define([
                 return this.a(x) * 2;
             };
             Car.prototype.A = 0;
-            In.inherit(Car, Thing);
+            In.inheritFrom(Car, Thing);
             //We can change the prototype after inheriting
             Car.prototype.c = function (x) {
                 return this.a(x) * 3;
@@ -84,7 +84,7 @@ define([
         it("points to the right constructor after the inheritance declaration", function() {
             function Car() { return; }
 
-            In.inherit(Car, Thing);
+            In.inheritFrom(Car, Thing);
             var i = new Car();
 
             expect(i.constructor).toBe(Car);
@@ -94,9 +94,9 @@ define([
             function Base() { return; }
             function Special() { return; }
 
-            In.inherit(Special, Base);
+            In.inheritFrom(Special, Base);
 
-            expect(In.inherit.bind(Special, Base)).toThrow();
+            expect(In.inheritFrom.bind(Special, Base)).toThrow();
         });
 
         it("detects multiple inherits of the same class, even if a level away", function() {
@@ -104,10 +104,10 @@ define([
             function Special() { return; }
             function Exclusive() { return; }
 
-            In.inherit(Special, Base);
-            In.inherit(Exclusive, Special);
+            In.inheritFrom(Special, Base);
+            In.inheritFrom(Exclusive, Special);
 
-            expect(In.inherit.bind(Exclusive, Base)).toThrow();
+            expect(In.inheritFrom.bind(Exclusive, Base)).toThrow();
         });
 
         it("allows to override the default assert callback. In this way you can inject your preferred framework (e.g. Chai)", function() {
@@ -122,7 +122,7 @@ define([
                 "assert": assertCallback
             });
 
-            expect(In.inherit.bind(null, null)).toThrow();
+            expect(In.inheritFrom.bind(null, null)).toThrow();
 
             expect(assertCalled).toBe(true);
         });
@@ -133,9 +133,9 @@ define([
             });
             function Base() { return; }
             function Special() { return; }
-            In.inherit(Special, Base);
+            In.inheritFrom(Special, Base);
 
-            In.inherit(Special, Base); //double inherit doesn't throw
+            In.inheritFrom(Special, Base); //double inherit doesn't throw
         });
 
     });

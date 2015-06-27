@@ -2,9 +2,9 @@
 /*global define */
 
 /*!
- *  In.js v0.0.0
+ *  In.js v0.1.0
  *
- *  (c) 2015, Valentino Miazzo
+ *  (c) Valentino Miazzo
  *
  *  MIT License
  */
@@ -79,12 +79,12 @@ define([
 
     /**
     Declares that clazz inherits from zuper.
-    @method inherit
+    @method inheritFrom
     @static
     @param clazz {Class} the class inheriting
     @param zuper {Class} the class inherited
     */
-    In.inherit = function (clazz, zuper) {
+    In.inheritFrom = function (clazz, zuper) {
         if (_assert) { _assert(clazz, "clazz is null"); }
         if (_assert) { _assert(typeof clazz === 'function', "clazz is not a function"); }
         if (_assert) { _assert(zuper, "zuper is null"); }
@@ -97,6 +97,16 @@ define([
         clazz.prototype.zuper = zuper;
         _simpleCopy(clazz.prototype, oldPrototype); //restore members already added before calling this
     };
+
+    /**
+    Declares that clazz inherits from zuper.
+    @method inherit
+    @static
+    @param clazz {Class} the class inheriting
+    @param zuper {Class} the class inherited
+    @deprecated please use inheritFrom
+    */
+    In.inherit = In.inheritFrom;
 
     In.configure(module.config());
 

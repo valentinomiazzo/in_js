@@ -2,7 +2,7 @@
     "project": {
         "name": "in.js",
         "description": "Prototypal inheritance done right",
-        "version": "0.0.0",
+        "version": "0.1.0",
         "url": ""
     },
     "files": {
@@ -36,7 +36,7 @@
         {
             "file": "js\\src\\In.js",
             "line": 52,
-            "description": "Configures the library.\nIt expects a JSON like the following:\n\n    {\n        \"assert\" : assertCallback\n    }\n\nIt is called at load time by require.js passing as `config` the config of the module.\n\nFields description:\n\n`assertCallback`:\nThe signature is `void assert(boolean, String)`.\nIf you pass `null` (but not `undefined`) then assertions are disabled.",
+            "description": "Configures the library.\nIt expects a JSON like the following:\n\n    {\n        \"assert\" : assertCallback\n    }\n\nIt is called at load time by require.js passing as `config` the config of the module.\n\nFields description:\n\n`assertCallback`:\nOptional. The signature is `void assert(boolean, String)`.\nIf you pass `null` (but not `undefined`) then assertions are disabled.",
             "itemtype": "method",
             "name": "configure",
             "static": 1,
@@ -54,6 +54,27 @@
             "line": 80,
             "description": "Declares that clazz inherits from zuper.",
             "itemtype": "method",
+            "name": "inheritFrom",
+            "static": 1,
+            "params": [
+                {
+                    "name": "clazz",
+                    "description": "the class inheriting",
+                    "type": "Class"
+                },
+                {
+                    "name": "zuper",
+                    "description": "the class inherited",
+                    "type": "Class"
+                }
+            ],
+            "class": "In"
+        },
+        {
+            "file": "js\\src\\In.js",
+            "line": 101,
+            "description": "Declares that clazz inherits from zuper.",
+            "itemtype": "method",
             "name": "inherit",
             "static": 1,
             "params": [
@@ -68,6 +89,8 @@
                     "type": "Class"
                 }
             ],
+            "deprecated": true,
+            "deprecationMessage": "please use inheritFrom",
             "class": "In"
         }
     ],
