@@ -99,11 +99,8 @@ define([
     };
 
     /**
-    Declares that clazz inherits from zuper.
     @method inherit
     @static
-    @param clazz {Class} the class inheriting
-    @param zuper {Class} the class inherited
     @deprecated please use inheritFrom
     */
     In.inherit = In.inheritFrom;

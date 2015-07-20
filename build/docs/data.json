@@ -73,22 +73,9 @@
         {
             "file": "js\\src\\In.js",
             "line": 101,
-            "description": "Declares that clazz inherits from zuper.",
             "itemtype": "method",
             "name": "inherit",
             "static": 1,
-            "params": [
-                {
-                    "name": "clazz",
-                    "description": "the class inheriting",
-                    "type": "Class"
-                },
-                {
-                    "name": "zuper",
-                    "description": "the class inherited",
-                    "type": "Class"
-                }
-            ],
             "deprecated": true,
             "deprecationMessage": "please use inheritFrom",
             "class": "In"

@@ -1,8 +1,8 @@
 # In.js : prototypal inheritance done right #
 
-**In** comes from **In**heritance because this is what the lib provides. More accurately, it provides prototypal inheritance.
+**In** comes from **In**heritance because this is what the lib addresses. More accurately, it simplifies prototypal inheritance.
 
-It takes care of some details often overlooked:
+It is minimal by design and it takes care of some details often overlooked:
 
 * the constructor of an instance of T points to the function T, as expected
 ```javascript
@@ -59,27 +59,30 @@ A [coverage report](https://rawgit.com/valentinomiazzo/in_js/master/build/covera
     * copy `js/src/In.js` in your project
     * add it to your HTML in a script tag. The module will be attached to `window.In`
 * How to use the lib (advanced)
-    * The lib is a [Require.js](http://require.js) compatible module.
-    * The lib is a [Bower](http://bower.io) compatible component. You can add it to your dependencies in this way:
+    * The lib is a [Bower](http://bower.io) component. You can add it to your dependencies in this way:
     ```javascript
     "dependencies": {
         "in_js": "git+https://github.com/valentinomiazzo/in_js.git"
     }
     ```
+    * The lib is a [Require.js](http://require.js) module. Remember to add it to your `require.config()`
 * How to modify the lib, run tests, etc...
-    * install [Node.js](http://nodejs.org/) (tested with 0.10.31)
-    * install [Npm](https://www.npmjs.com/) (tested with 2.8.3)
-    * `npm install grunt-cli -g`
-    * clone this repository
-    * in the root of the cloned repo, type (on Windows you may need to disable antivirus if you get strange issues during the install):
+    * Prerequisites
+        * install [Node.js](http://nodejs.org/)
+        * install [Npm](https://www.npmjs.com/)
+        * `npm install grunt-cli -g`
+    * Install
+        * clone this repository
+        * in the root of the cloned repo, type (on Windows you may need to disable antivirus if you get strange issues during the install):
         * `npm install`
+    * Build
         * `grunt`
         * docs are generated in `build/docs`
-        * Writing tests
-            * [Jasmine](https://jasmine.github.io/) it is used for testing.
-            * tests are in `js/spec`
-            * tests reports are in `build/tests`
-            * coverage reports are in `build/coverage`
+    * Test
+        * [Jasmine](https://jasmine.github.io/) it is used for testing.
+        * tests are in `js/spec`
+        * tests reports are in `build/tests`
+        * coverage reports are in `build/coverage`
 
 ### Contribution guidelines ###
 
