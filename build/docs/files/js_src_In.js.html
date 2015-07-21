@@ -19,7 +19,7 @@
             
         </div>
         <div class="yui3-u-1-4 version">
-            <em>API Docs for: 0.1.0</em>
+            <em>API Docs for: 0.1.1</em>
         </div>
     </div>
     <div id="bd" class="yui3-g">
@@ -86,9 +86,6 @@
 
 <div class="file">
     <pre class="code prettyprint linenums">
-/*jslint browser: true, bitwise: true, nomen: true, todo: true, vars: true, plusplus: true, indent: 4 */
-/*global define */
-
 /*!
  *  In.js v0.1.0
  *
@@ -97,6 +94,10 @@
  *  MIT License
  */
 
+/*jshint browser: true, bitwise: true, nomen: true, plusplus: true, indent: 4, expr: false, -W030 */
+/*global define*/
+
+//This code permits to use the library even without require.js.
 define = define || function (deps, fn) {
     &quot;use strict&quot;;
     window.In = window.In || {};
@@ -115,12 +116,13 @@ define([
     */
     var In = window.In || {};
 
-    var _assert = function (trueish, message) {
+    var _defaultAssert = function (trueish, message) {
         if (!trueish) {
             //TODO: add more details about the failure, like stack trace
             throw new Error(message || &quot;_assert violated ...&quot;);
         }
     };
+    var _assert = _defaultAssert;
 
     function _simpleCopy(dst, src) {
         var member;
@@ -149,19 +151,24 @@ define([
 
     Fields description:
 
-    &#x60;assertCallback&#x60;:
+    &#x60;assert&#x60;:
     Optional. The signature is &#x60;void assert(boolean, String)&#x60;.
-    If you pass &#x60;null&#x60; (but not &#x60;undefined&#x60;) then assertions are disabled.
+    If you pass &#x60;null&#x60; then assertions are disabled.
+    If you pass &#x60;undefined&#x60; then the default implementation is used.
 
     @method configure
     @static
     @param config {Object} the configuration object
     */
     In.configure = function(config) {
-        if (_assert) { _assert(config !== null, &quot;config is null&quot;); }
-        if (config.assert &amp;&amp; _assert) { _assert(typeof config.assert === &#x27;function&#x27;, &quot;assert is not a function&quot;); }
-        if (config.assert !== undefined) {
+        _assert &amp;&amp;  _assert(config !== null, &quot;config is null&quot;);
+        if (config.assert) {
+            _assert &amp;&amp; _assert(typeof config.assert === &quot;function&quot;, &quot;assert is not a function&quot;);
             _assert = config.assert;
+        } else if (config.assert === null) {
+            _assert = null;
+        } else {
+            _assert = _defaultAssert;
         }
     };
 

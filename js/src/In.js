@@ -1,14 +1,15 @@
-/*jslint browser: true, bitwise: true, nomen: true, todo: true, vars: true, plusplus: true, indent: 4 */
-/*global define */
-
 /*!
- *  In.js v0.1.0
+ *  In.js v0.1.1
  *
  *  (c) Valentino Miazzo
  *
  *  MIT License
  */
 
+/*jshint browser: true, bitwise: true, nomen: true, plusplus: true, indent: 4, expr: false, -W030 */
+/*global define*/
+
+//This code permits to use the library even without require.js.
 define = define || function (deps, fn) {
     "use strict";
     window.In = window.In || {};
@@ -27,12 +28,13 @@ define([
     */
     var In = window.In || {};
 
-    var _assert = function (trueish, message) {
+    var _defaultAssert = function (trueish, message) {
         if (!trueish) {
             //TODO: add more details about the failure, like stack trace
             throw new Error(message || "_assert violated ...");
         }
     };
+    var _assert = _defaultAssert;
 
     function _simpleCopy(dst, src) {
         var member;
@@ -61,19 +63,24 @@ define([
 
     Fields description:
 
-    `assertCallback`:
+    `assert`:
     Optional. The signature is `void assert(boolean, String)`.
-    If you pass `null` (but not `undefined`) then assertions are disabled.
+    If you pass `null` then assertions are disabled.
+    If you pass `undefined` then the default implementation is used.
 
     @method configure
     @static
     @param config {Object} the configuration object
     */
     In.configure = function(config) {
-        if (_assert) { _assert(config !== null, "config is null"); }
-        if (config.assert && _assert) { _assert(typeof config.assert === 'function', "assert is not a function"); }
-        if (config.assert !== undefined) {
+        _assert &&  _assert(config !== null, "config is null");
+        if (config.assert) {
+            _assert && _assert(typeof config.assert === "function", "assert is not a function");
             _assert = config.assert;
+        } else if (config.assert === null) {
+            _assert = null;
+        } else {
+            _assert = _defaultAssert;
         }
     };
 

@@ -1,13 +1,13 @@
-/*jslint browser: true, bitwise: true, nomen: true, todo: true, vars: true, plusplus: true, indent: 4 */
-/*global define, describe, it, expect */
-
 /*!
- *  In.js v0.1.0
+ *  In.js v0.1.1
  *
  *  (c) Valentino Miazzo
  *
  *  MIT License
  */
+
+/*jshint browser: true, bitwise: true, nomen: true, plusplus: true, indent: 4, expr: false, -W030 */
+/*global define, describe, it, expect */
 
 define([
     "In"
@@ -123,8 +123,11 @@ define([
             });
 
             expect(In.inheritFrom.bind(null, null)).toThrow();
-
             expect(assertCalled).toBe(true);
+
+            In.configure({
+                "assert": undefined
+            });
         });
 
         it("allows you to disable assertions, if you want.", function() {
@@ -135,7 +138,13 @@ define([
             function Special() { return; }
             In.inheritFrom(Special, Base);
 
-            In.inheritFrom(Special, Base); //double inherit doesn't throw
+            try {
+                In.inheritFrom(Special, Base); //double inherit doesn't throw
+            } finally {
+                In.configure({
+                    "assert": undefined
+                });
+            }
         });
 
     });

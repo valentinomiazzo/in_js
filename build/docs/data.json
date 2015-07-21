@@ -2,7 +2,7 @@
     "project": {
         "name": "in.js",
         "description": "Prototypal inheritance done right",
-        "version": "0.1.0",
+        "version": "0.1.1",
         "url": ""
     },
     "files": {
@@ -27,7 +27,7 @@
             "plugin_for": [],
             "extension_for": [],
             "file": "js\\src\\In.js",
-            "line": 23,
+            "line": 24,
             "description": "This is the collection of static methods exposed by In.js",
             "static": 1
         }
@@ -35,8 +35,8 @@
     "classitems": [
         {
             "file": "js\\src\\In.js",
-            "line": 52,
-            "description": "Configures the library.\nIt expects a JSON like the following:\n\n    {\n        \"assert\" : assertCallback\n    }\n\nIt is called at load time by require.js passing as `config` the config of the module.\n\nFields description:\n\n`assertCallback`:\nOptional. The signature is `void assert(boolean, String)`.\nIf you pass `null` (but not `undefined`) then assertions are disabled.",
+            "line": 54,
+            "description": "Configures the library.\nIt expects a JSON like the following:\n\n    {\n        \"assert\" : assertCallback\n    }\n\nIt is called at load time by require.js passing as `config` the config of the module.\n\nFields description:\n\n`assert`:\nOptional. The signature is `void assert(boolean, String)`.\nIf you pass `null` then assertions are disabled.\nIf you pass `undefined` then the default implementation is used.",
             "itemtype": "method",
             "name": "configure",
             "static": 1,
@@ -51,7 +51,7 @@
         },
         {
             "file": "js\\src\\In.js",
-            "line": 80,
+            "line": 87,
             "description": "Declares that clazz inherits from zuper.",
             "itemtype": "method",
             "name": "inheritFrom",
@@ -72,7 +72,7 @@
         },
         {
             "file": "js\\src\\In.js",
-            "line": 101,
+            "line": 108,
             "itemtype": "method",
             "name": "inherit",
             "static": 1,

@@ -15,10 +15,10 @@
 <div class="header high">
     <h1>Code coverage report for <span class="entity">./js/src/In.js</span></h1>
     <h2>
-        Statements: <span class="metric">92.86% <small>(39 / 42)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Branches: <span class="metric">76.47% <small>(26 / 34)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Statements: <span class="metric">93.18% <small>(41 / 44)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">79.41% <small>(27 / 34)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Functions: <span class="metric">71.43% <small>(5 / 7)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Lines: <span class="metric">94.12% <small>(32 / 34)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">94.74% <small>(36 / 38)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
     <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">./js/src/</a> &#187; In.js</div>
@@ -135,7 +135,15 @@
 108
 109
 110
-111</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+111
+112
+113
+114
+115
+116
+117
+118</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -165,11 +173,12 @@
 <span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">48</span>
+<span class="cline-any cline-yes">49</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-yes">9</span>
@@ -206,11 +215,16 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3</span>
-<span class="cline-any cline-yes">3</span>
-<span class="cline-any cline-yes">3</span>
-<span class="cline-any cline-yes">2</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -245,10 +259,7 @@
 <span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/*jslint browser: true, bitwise: true, nomen: true, todo: true, vars: true, plusplus: true, indent: 4 */
-/*global define */
-&nbsp;
-/*!
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/*!
  *  In.js v0.1.0
  *
  *  (c) Valentino Miazzo
@@ -256,6 +267,10 @@
  *  MIT License
  */
 &nbsp;
+/*jshint browser: true, bitwise: true, nomen: true, plusplus: true, indent: 4, expr: false, -W030 */
+/*global define*/
+&nbsp;
+//This code permits to use the library even without require.js.
 define = define || <span class="fstat-no" title="function not covered" ><span class="branch-1 cbranch-no" title="branch not covered" >function (deps, fn) {</span></span>
     "use strict";
 <span class="cstat-no" title="statement not covered" >    window.In = window.In || {};</span>
@@ -274,12 +289,13 @@ define([
     */
     var In = window.In || {};
 &nbsp;
-    var _assert = function (trueish, message) {
+    var _defaultAssert = function (trueish, message) {
         if (!trueish) {
             //TODO: add more details about the failure, like stack trace
             throw new Error(message || <span class="branch-1 cbranch-no" title="branch not covered" >"_assert violated ...")</span>;
         }
     };
+    var _assert = _defaultAssert;
 &nbsp;
     function _simpleCopy(dst, src) {
         var member;
@@ -308,19 +324,24 @@ define([
 &nbsp;
     Fields description:
 &nbsp;
-    `assertCallback`:
+    `assert`:
     Optional. The signature is `void assert(boolean, String)`.
-    If you pass `null` (but not `undefined`) then assertions are disabled.
+    If you pass `null` then assertions are disabled.
+    If you pass `undefined` then the default implementation is used.
 &nbsp;
     @method configure
     @static
     @param config {Object} the configuration object
     */
     In.configure = function(config) {
-        <span class="missing-if-branch" title="else path not taken" >E</span>if (_assert) { _assert(config !== null, "config is null"); }
-        if (config.assert &amp;&amp; _assert) { _assert(typeof config.assert === 'function', "assert is not a function"); }
-        if (config.assert !== undefined) {
+        _assert &amp;&amp;  _assert(config !== null, "config is null");
+        if (config.assert) {
+            _assert &amp;&amp; _assert(typeof config.assert === "function", "assert is not a function");
             _assert = config.assert;
+        } else if (config.assert === null) {
+            _assert = null;
+        } else {
+            _assert = _defaultAssert;
         }
     };
 &nbsp;
@@ -360,7 +381,7 @@ define([
 
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Jul 20 2015 21:16:29 GMT+0200 (ora legale Europa occidentale)</div>
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Jul 21 2015 21:10:22 GMT+0200 (ora legale Europa occidentale)</div>
 </div>
 <script src="../../prettify.js"></script>
 <script>
