@@ -1,6 +1,6 @@
 # In.js : prototypal inheritance done right #
 
-**In** comes from **In**heritance because this is what the lib addresses. More accurately, it simplifies prototypal inheritance.
+**In** comes from **In**heritance because this is what the lib addresses. More accurately, it simplifies prototypal inheritance. `In.js` is under MIT license.
 
 It is minimal by design and it takes care of some details often overlooked:
 
