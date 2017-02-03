@@ -71,10 +71,12 @@ A [coverage report](https://rawgit.com/valentinomiazzo/in_js/master/build/covera
         * install [Node.js](http://nodejs.org/)
         * install [Npm](https://www.npmjs.com/)
         * `npm install grunt-cli -g`
+        * `npm install bower -g`
     * Install
         * clone this repository
         * in the root of the cloned repo, type (on Windows you may need to disable antivirus if you get strange issues during the install):
         * `npm install`
+        * On some platforms you may need to install `apt-get install nodejs-legacy` if the command above doesn't work.
     * Build
         * `grunt`
         * docs are generated in `build/docs`
